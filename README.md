@@ -9,7 +9,8 @@
 	Tilt sensor(SW200D)
 
 ## Circuit Diagram:
- 
+ <img width="1458" height="727" alt="image" src="https://github.com/user-attachments/assets/bbbc6aff-32c6-4339-bda6-69b4539de081" />
+
 ## Theory :
  The Arduino Uno is powered by the ATmega328P, an 8-bit microcontroller that runs at 16 MHz. It has 32 KB of flash memory, 2 KB of SRAM, and 1 KB of EEPROM. The board has 14 digital I/O pins (of which 6 can be used as PWM outputs) and 6 analog input pins. These pins allow the board to interface with various sensors, actuators, and other devices.The Arduino Uno can be powered via a USB connection or an external power supply. The board has a built-in voltage regulator to manage power from 7 to 12 volts.
 The board is programmable using the Arduino IDE (Integrated Development Environment), which supports a simplified version of C/C++. The code, known as a "sketch," is uploaded to the board via a USB connection. The Uno has a USB-B port, which is used for communication with a computer. The USB connection also powers the board when connected. The board includes a reset button that restarts the microcontroller, useful during programming and troubleshooting. The In-Circuit Serial Programming (ICSP) header allows for low-level programming of the microcontroller or firmware updates. The Uno has a built-in LED on pin 13, commonly used for simple tests and debugging.
@@ -46,12 +47,33 @@ Step 7: Save Your Work
 •	Save the Circuit: Click "Save" to keep your circuit design and code for future use.
 
 ## Code:
+```
+int ledPin=13;
+int inPin=7;
+void setup()
+{
+ Serial.begin(9600);
+  pinMode(ledPin,OUTPUT);
+  pinMode(inPin,INPUT);
+}
+void loop()
+{
+  int val=digitalRead(inPin);
+  if(val==0)
+  {
+    digitalWrite(ledPin,HIGH);
+  }
+  else
+  {
+    digitalWrite(ledPin,LOW);
+  }
+}
 
-
-
+```
 ## Output:
 
- 
+ <img width="1919" height="906" alt="image" src="https://github.com/user-attachments/assets/7f50011e-1f2d-451c-a62c-913c48cd9bec" />
+
 
 
 ## Result:
